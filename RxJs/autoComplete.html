@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <script src="https://unpkg.com/@reactivex/rxjs@6.3.3/dist/global/rxjs.umd.js"></script>
+        <title>Document</title>
+        <style>
+            .content {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 25%;                
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="content">
+            <input type="text" placeholder="Pais...">
+            <ul></ul>
+        </div>
+
+        <script>
+            const { fromEvent, ajax: {ajax}, of} = rxjs;
+            const {pluck, map, debounceTime, switchMap, catchError, distinctUntilChanged, startWith} = rxjs.operators;
+
+            const input = fromEvent(document.querySelector("input"), 'input');
+            const ul = document.querySelector("ul");
+
+            const mostrarResultado = res => {
+                ul.innerHTML = res.map(e => `<li>${e}</li>`).join('');
+            }
+
+            const buscaPaisesNaApi = termo => ajax(`https://restcountries.com/v3.1/name/${termo}`).pipe(
+                pluck('response'),
+                map(resposta => resposta.map(e => e.name.common))
+            )
+
+            input.pipe(
+                debounceTime(300),
+                pluck('target', 'value'),
+                map(e => e.trim()),
+                distinctUntilChanged(),
+                switchMap(termo => {
+                    if (!termo || termo.length < 3) return of([])
+                    return buscaPaisesNaApi(termo);
+                }),
+                catchError((err, source) => {
+                    console.log(err);
+                    return source.pipe(
+                        startWith([])
+                    );
+                })
+            )
+            .subscribe(res => {
+                console.log(res);
+                mostrarResultado(res);
+            });
+
+
+        </script>
+
+    </body>
+</html>
