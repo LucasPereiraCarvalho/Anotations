@@ -1,0 +1,1 @@
+Anotações sobre diversos assuntos da tecnologia.
