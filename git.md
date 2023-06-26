@@ -1,17 +1,12 @@
-## Git <> GitHub
-GitHub hospeda repositório .git
+## Estagios de um arquivo
+1. **Modified**: Quando um arquivo sofre uma modificação
+2. **Staged**: Área de preparo, onde somente vai os arquivos que realmente serão comitados.
+3. **Commit**: Arquivos comitados, enviados para o controle de verão.
 
-Funções do GitHub: 
-1. Hospedar
-2. Distribuir
-3. Rede Social
-4. Pull Requests
-5. etc...
-
-## SEO no GitHub
-1. Nome curto e memoravel
-2. Descrição com palavras chaves
-
-## Codespaces
-O Codespaces é um ambiente de desenvolvimento completo fornecido de forma gratuita pelo GitHub onde é disponibilizado um editor de código, que nesse caso é o super popular VSCode, quanto um terminal que por padrão roda Linux.
-
+## Comandos populares
+- `git log`
+- `git commit` 
+- `git commit --amend` 
+- `git status`
+- `git add` 
+- `git diff` 
