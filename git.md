@@ -11,5 +11,5 @@
 - `git add` 
 - `git diff` 
 - `git push` - empurrar alterações locais para o origin.
-- `git push --force` - empurrar de forma forçada alterações locais para o origin.
+- `git push --force` - empurrar de forma forçada alterações locais para o origin. (Sempre tenha atenção ao usar --force)
 - `git pull`
