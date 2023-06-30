@@ -15,4 +15,7 @@ Funções do GitHub:
 ## Codespaces
 O Codespaces é um ambiente de desenvolvimento completo fornecido de forma gratuita pelo GitHub onde é disponibilizado um editor de código, que nesse caso é o super popular VSCode, quanto um terminal que por padrão roda Linux.
 
-
+## Milestone e Issues do Projeto
+Como organizar um projeto:
+- Milestone: Grandes desafios do projeto.
+- Issues: Pequenos desafios das milestone.
