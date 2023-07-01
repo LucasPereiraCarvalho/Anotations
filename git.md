@@ -6,6 +6,7 @@
 ## Comandos populares
 - `git log`
 - `git commit -m "mensagem"` - atalho para fazer novos commits.
+- `git commit -m "mensagem `arquivo`"` - para destacar o arquivo
 - `git commit --amend` 
 - `git status`
 - `git add` 
