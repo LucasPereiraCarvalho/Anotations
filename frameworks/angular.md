@@ -9,15 +9,15 @@ Comunicação entre o codigo TS e o Template.
 - [Codigo TypeScript (Logica de negocio)]
 - [Template (HTML)]
 
-<span style="color:orange"> **Output Data:** [TS] >>> [Template] </span>.
+#### **Output Data:** [TS] >>> [Template]
 
 1. String Interpolation `{{ data }}`
 2. Property Binding `[property]="data"`
 
-<span style="color:orange"> **React to (User) Events:** [TS] <<< [Template] </span>.
+#### **React to (User) Events:** [TS] <<< [Template]
 
 1. Event Binding `(event)="expression"`
 
-<span style="color:orange"> **Combinação de ambos** </span>.
+#### **Combinação de ambos**
 
 1. Two-Way-Databing `[(ngModel)]="data"`
